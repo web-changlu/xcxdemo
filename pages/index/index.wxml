@@ -1,0 +1,86 @@
+<view class="bg">
+  <view class="box">
+    <view class="title">
+      <input value="{{subjecttitle}}"></input>
+    </view>
+    <view class="content">
+      <textarea auto-height="{{true}}" value="{{subjectcon}}"></textarea>
+    </view>
+    <!-- 上传图片 -->
+    <view class="img-v" hover-class="none" hover-stop-propagation="false">
+        <view class="img" wx:for="{{imgs}}" wx:for-item="item" wx:key="*this"> 
+          <image class="image" src="{{item}}" bindtap="previewImg" data-index="{{index}}"  ></image>
+          <image bindtap="deleteImg" class="deleteImg" src="../../assets/img/delete.png">
+            
+          </image>
+        </view>
+        <view class="up_img" bindtap="chooseImg">
+          <image class="image" src="../../assets/img/up.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+            
+          </image>
+        </view>
+    </view>
+    <view class="tip">19/3000</view>
+  </view>
+  <view class="box">
+      <view class="title">选项</view>
+      <view class="selectbox">
+          <view class="label2" wx:for="{{boxItem}}" wx:key="name">
+            <view id="{{index}}"  bindtap='selectBtn' class="itemleft" hover-class="none" hover-stop-propagation="false">
+              <view class="itembox" wx:if="{{index==clickId}}" style='background:#15C39D;color:#fff'>
+                {{item.name}}
+              </view>
+              <view class="itembox" wx:else  style='background:#fff;color:#000'>
+                {{item.name}}
+              </view>
+            </view>
+            <!-- <radio class="itemleft" id="{{item.name}}" value="{{item.name}}" ></radio> -->
+            <!-- <label class="label-2-text" for="{{item.name}}"><text>{{item.name}}</text></label> -->
+            <!-- <input class="selectinp"></input> -->
+            <textarea auto-height="{{true}}" class="selectinp" value="{{item.value}}">
+              <view class="teximg" >
+                <image class="" src="../../assets/img/im.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+                  
+                </image>
+              </view>
+            </textarea>
+            <view class="selv" hover-class="none" hover-stop-propagation="false">
+              <image class="" src="../../assets/img/seldel.png" >
+                
+              </image>
+            </view>
+          </view>
+      </view>
+      <!-- 添加选项 -->
+      <view class="add" bindtap="addItem"><image class="addicon" src="../../assets/img/add.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+        
+      </image> 添加选项</view>
+  </view>
+  <view class="box">
+    <view class="title">
+       <input value="{{analysistitle}}"></input>
+      </view>
+    <view class="content">
+      <textarea auto-height="{{true}}" value="{{analysiscon}}"></textarea>
+    </view>
+    <!-- 上传图片 -->
+    <view class="img-v" hover-class="none" hover-stop-propagation="false">
+        <view class="img" wx:for="{{imgs2}}" wx:for-item="item" wx:key="*this"> 
+          <image class="image" src="{{item}}"  bindtap="previewImg2" data-index="{{index}}"  ></image>
+          <image bindtap="deleteImg2" class="deleteImg" src="../../assets/img/delete.png">
+            
+          </image>
+        </view>
+        <view class="up_img" bindtap="chooseImg2">
+          <image class="image" src="../../assets/img/up.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+            
+          </image>
+        </view>
+    </view>
+    <view class="tip">19/3000</view>
+  </view>
+  <view class="succ" hover-class="none" hover-stop-propagation="false">
+    保存
+  </view>
+
+</view>
